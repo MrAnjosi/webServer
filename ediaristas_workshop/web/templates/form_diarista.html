@@ -1,0 +1,11 @@
+{% extends 'base.html'%}
+{% load crispy_forms_tags %}
+{% block conteudo %}
+<!--isso para ele poder aceitar arquivos de entrada-->
+<form method="post" enctype="multipart/form-data">
+    <!--ass_p para mostrar em formato de paragrafo-->
+    {% csrf_token %}
+    {{form_diarista|crispy}}
+    <button type="submit" class="btn btn-primary">Cadastrar</button>
+</form>
+{% endblock conteudo %}
